@@ -67,15 +67,15 @@ WALLX_REPO=/path/to/wall-x bash process_data.sh <bench_name> <ckpt_name> <env_cf
 ## Model Assets
 
 The checkpoint is published on Hugging Face as
-[`x-square-robot/wall-oss-1.0-light-robodojo`](https://huggingface.co/x-square-robot/wall-oss-1.0-light-robodojo)
+[`x-square-robot/wall-oss-1.0-lite-robodojo`](https://huggingface.co/x-square-robot/wall-oss-1.0-lite-robodojo)
 (F32 weights, no training-side state, ~24 GB on disk):
 
 ```bash
-hf download x-square-robot/wall-oss-1.0-light-robodojo --local-dir <bench_root>/wall-oss-1.0-light-robodojo
+hf download x-square-robot/wall-oss-1.0-lite-robodojo --local-dir <bench_root>/wall-oss-1.0-lite-robodojo
 ```
 
 ```text
-wall-oss-1.0-light-robodojo/
+wall-oss-1.0-lite-robodojo/
 ├── checkpoint/            # config.json, config.yml, model.safetensors, normalisers
 └── assets/                # tokenizer and processor files
 ```
@@ -109,8 +109,8 @@ bash eval.sh <bench_name> <task_name> <ckpt_name> <env_cfg_type> <action_type> \
              <policy_conda_env> <eval_env_conda_env>
 
 # Example
-WALLX_CHECKPOINT=<bench_root>/wall-oss-1.0-light-robodojo/checkpoint \
-  bash eval.sh RoboDojo swap_blocks wall-oss-1.0-light-robodojo arx_x5 ee 0 0 0 <policy_conda_env> <eval_env_conda_env>
+WALLX_CHECKPOINT=<bench_root>/wall-oss-1.0-lite-robodojo/checkpoint \
+  bash eval.sh RoboDojo swap_blocks wall-oss-1.0-lite-robodojo arx_x5 ee 0 0 0 <policy_conda_env> <eval_env_conda_env>
 ```
 
 `EVAL_ENV_TYPE=debug` runs the offline wiring check (no simulator); leave it
